@@ -1,4 +1,7 @@
 //your JS code here. If required.
+// script.js
+
+// Function to set a cookie
 function setCookie(name, value, days) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
@@ -22,8 +25,8 @@ window.onload = function() {
     document.getElementById('fontsize').value = savedFontSize;
   }
 
-  if (savedFontColor ) {
-    document.documentElement.style.setProperty('--fontcolor', savedFontColor);
+  if (savedFontColor) {
+    document.documentElement .style.setProperty('--fontcolor', savedFontColor);
     document.getElementById('fontcolor').value = savedFontColor;
   }
 };
@@ -39,7 +42,7 @@ document.querySelector('form').onsubmit = function(event) {
   setCookie('fontsize', fontSize, 7); // Cookie expires in 7 days
   setCookie('fontcolor', fontColor, 7); // Cookie expires in 7 days
 
-  // Apply the new preferences
+  // Apply the selected preferences
   document.documentElement.style.setProperty('--fontsize', fontSize + 'px');
   document.documentElement.style.setProperty('--fontcolor', fontColor);
 };
